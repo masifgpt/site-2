@@ -3,7 +3,7 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(5, 5, 10, 0.8); /* Glass effect */
+  background: rgba(5, 5, 10, 0.9); /* Thoda dark kiya taaki text saaf dikhe */
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -25,16 +25,12 @@
   text-decoration: none;
   display: flex;
   align-items: center;
+  z-index: 1001; /* Logo hamesha upar rahe */
 }
 
-.highlight {
-  color: #3b82f6; /* Blue text */
-}
+.highlight { color: #3b82f6; }
 
-.links {
-  display: flex;
-  gap: 32px;
-}
+.links { display: flex; gap: 32px; }
 
 .link {
   color: #9ca3af;
@@ -43,23 +39,11 @@
   text-decoration: none;
   transition: color 0.3s ease;
 }
+.link:hover { color: white; }
 
-.link:hover {
-  color: white;
-}
+.actions { display: flex; align-items: center; gap: 20px; }
 
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.loginBtn {
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 0.95rem;
-}
+.loginBtn { color: white; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
 
 .ctaBtn {
   background: #2563eb;
@@ -75,9 +59,43 @@
   border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Mobile Responsive */
+/* Mobile Menu Button (Hidden on Desktop) */
+.menuBtn {
+  display: none; 
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Mobile Menu Dropdown */
+.mobileMenu {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #05050a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.mobileMenu.open {
+  transform: translateY(0);
+}
+
+.mobileLink {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .links, .actions {
-    display: none; 
-  }
+  .links, .actions { display: none; } /* Desktop links chupao */
+  .menuBtn { display: block; } /* Mobile button dikhao */
 }
