@@ -1,0 +1,208 @@
+.section {
+  position: relative;
+  padding: 120px 20px;
+  background: #0b0f19; /* Slightly different dark shade */
+  overflow: hidden;
+  perspective: 1500px; /* 3D Depth create karne ke liye */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* 3D Phone Container */
+.phoneWrapper {
+  position: relative;
+  width: 360px;
+  height: 720px;
+  transform-style: preserve-3d;
+  z-index: 10;
+}
+
+/* The Phone Body */
+.phone {
+  width: 100%;
+  height: 100%;
+  background: #121212;
+  border-radius: 50px;
+  border: 4px solid #334155; /* Side Frame */
+  box-shadow: 
+    -20px 20px 60px rgba(0,0,0,0.6), /* Deep Shadow */
+    inset 0 0 20px rgba(0,0,0,0.8); /* Inner Depth */
+  position: relative;
+  overflow: hidden;
+  transform: rotateY(-15deg) rotateX(10deg); /* 3D Tilt */
+}
+
+/* Dynamic Island / Notch */
+.notch {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 30px;
+  background: black;
+  border-radius: 20px;
+  z-index: 20;
+}
+
+/* Screen Content */
+.screen {
+  padding: 80px 30px 40px;
+  color: white;
+  height: 100%;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.tag {
+  background: rgba(255,255,255,0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  align-self: flex-start;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.subText {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: auto; /* Pushes content down */
+}
+
+/* Bottom Card inside Phone */
+.innerCard {
+  background: #1e1e24;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.slider {
+  width: 100%;
+  height: 6px;
+  background: #334155;
+  border-radius: 10px;
+  margin-top: 15px;
+  position: relative;
+}
+
+.sliderFill {
+  width: 60%;
+  height: 100%;
+  background: #3b82f6;
+  border-radius: 10px;
+  position: relative;
+}
+
+.sliderKnob {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* --- Floating Glass Cards --- */
+.floatCard {
+  position: absolute;
+  background: rgba(30, 41, 59, 0.7); /* Darker Glass */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 260px;
+  color: white;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  z-index: 30;
+  pointer-events: none; /* Mouse through */
+}
+
+.iconBox {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.cardTitle {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.cardDesc {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
+/* Positioning the cards around the phone */
+.card1 {
+  top: 20%;
+  right: -160px;
+}
+
+.card2 {
+  bottom: 15%;
+  left: -140px;
+  z-index: 40; /* In front of phone */
+}
+
+.card3 {
+  top: 50%;
+  left: -180px;
+  opacity: 0.8;
+  transform: scale(0.9);
+  z-index: 5; /* Behind phone */
+}
+
+/* Background Abstract Blocks (Visual Aid) */
+.bgBlock {
+  position: absolute;
+  background: #1e293b;
+  border-radius: 30px;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.block1 { width: 400px; height: 400px; top: 10%; right: 10%; transform: rotate(15deg); }
+.block2 { width: 300px; height: 300px; bottom: 5%; left: 5%; transform: rotate(-10deg); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .phone { transform: rotateY(0deg) rotateX(0deg); } /* No 3D on mobile */
+  .floatCard { display: none; } /* Hide complex cards on mobile */
+  .bgBlock { display: none; }
+}

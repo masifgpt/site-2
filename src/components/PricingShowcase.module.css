@@ -1,0 +1,235 @@
+.section {
+  position: relative;
+  padding: 120px 20px;
+  background: #0f172a; /* Dark Blue-ish Background */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+/* Background Tiles/Grid Effect */
+.bgGrid {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 100px 100px;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  position: relative;
+  z-index: 10;
+  flex-wrap: wrap;
+}
+
+/* Common Phone Frame Styles */
+.phone {
+  width: 340px;
+  height: 680px;
+  background: black;
+  border-radius: 50px;
+  padding: 12px;
+  box-shadow: 
+    0 30px 60px rgba(0,0,0,0.6),
+    0 0 0 4px #334155; /* Grey Rim */
+  position: relative;
+}
+
+.screen {
+  background: white; /* Light UI */
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.notch {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 30px;
+  background: black;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  z-index: 20;
+}
+
+.statusBar {
+  padding: 12px 25px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* === LEFT PHONE STYLES (Value Prop) === */
+.leftContent {
+  padding: 40px 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.tag {
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  align-self: flex-start;
+  margin-bottom: 20px;
+}
+
+.bigTitle {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.fadedText {
+  color: #cbd5e1; /* Faded part of title */
+}
+
+/* Dark Bottom Popup */
+.bottomPopup {
+  background: #1e1e24;
+  margin: 20px 10px 10px;
+  padding: 20px;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+  transform: translateY(100%);
+  animation: slideUp 1s ease forwards 0.5s;
+}
+
+@keyframes slideUp {
+  to { transform: translateY(0); }
+}
+
+.popupInput {
+  background: #333;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  color: white;
+  margin: 15px 0;
+  font-size: 0.9rem;
+}
+
+.popupBtn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* === RIGHT PHONE STYLES (Pricing) === */
+.rightContent {
+  padding: 40px 25px;
+  text-align: center;
+}
+
+.pricingHeader {
+  margin-bottom: 30px;
+}
+
+.priceCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 24px;
+  text-align: left;
+}
+
+.priceTag {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 10px 0;
+}
+
+.featureList {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.checkIcon {
+  color: #2563eb;
+  min-width: 18px;
+}
+
+.mainBtn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.mainBtn:hover {
+  background: #1d4ed8;
+}
+
+/* Floating Blue Balls */
+.ball {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #3b82f6, #1e3a8a);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  z-index: 20;
+}
+
+.ball1 {
+  width: 80px;
+  height: 80px;
+  bottom: 25%;
+  left: -40px;
+}
+
+.ball2 {
+  width: 100px;
+  height: 100px;
+  top: 40%;
+  right: -50px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .container { flex-direction: column; align-items: center; }
+  .ball { display: none; }
+}
