@@ -233,3 +233,23 @@
   .container { flex-direction: column; align-items: center; }
   .ball { display: none; }
 }
+/* ... Upar ka code same ... */
+
+/* Responsive Fix */
+@media (max-width: 900px) {
+  .container { flex-direction: column; align-items: center; }
+  .ball { display: none; }
+  
+  /* PHONE FIX FOR MOBILE */
+  .phone {
+    width: 100%;        /* Width ko 100% kar diya */
+    max-width: 320px;   /* Maximum 320px rakha taaki screen se bahar na jaye */
+    height: auto;       /* Height automatic */
+    min-height: 600px;
+    margin: 0 auto;     /* Center align */
+  }
+
+  .screen {
+    border-radius: 30px;
+  }
+}

@@ -30,7 +30,7 @@
   margin-bottom: 60px;
 }
 
-/* --- Typography --- */
+/* Typography */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -63,7 +63,7 @@
   margin-bottom: 40px;
 }
 
-/* --- Input Area (Standard Desktop) --- */
+/* Input Area (Desktop Default) */
 .inputGroup {
   display: flex;
   align-items: center;
@@ -120,7 +120,7 @@
   box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
 }
 
-/* --- THE VISUAL ENGINE --- */
+/* Visual Engine */
 .visualWrapper {
   position: relative;
   height: 600px;
@@ -131,64 +131,16 @@
   width: 100%;
 }
 
-.reactor {
-  position: relative;
-  width: 400px;
-  height: 400px;
-}
-
-.ring {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.ring1 {
-  width: 350px; height: 350px;
-  border-top-color: #3b82f6;
-  border-left-color: #3b82f6;
-  animation: spin 10s linear infinite;
-}
-
-.ring2 {
-  width: 280px; height: 280px;
-  border: 2px dashed rgba(249, 115, 22, 0.5);
-  animation: spin 15s linear infinite reverse;
-}
-
-.ring3 {
-  width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
-  animation: pulse 4s ease-in-out infinite;
-}
-
-.core {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100px; height: 100px;
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
-  border-radius: 50%;
-  box-shadow: 0 0 60px rgba(37, 99, 235, 0.6);
-  z-index: 5;
-}
-
-.floater {
-  position: absolute;
-  width: 15px; height: 15px;
-  background: #f59e0b;
-  border-radius: 50%;
-  box-shadow: 0 0 15px #f59e0b;
-}
-
+.reactor { position: relative; width: 400px; height: 400px; }
+.ring { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.1); }
+.ring1 { width: 350px; height: 350px; border-top-color: #3b82f6; border-left-color: #3b82f6; animation: spin 10s linear infinite; }
+.ring2 { width: 280px; height: 280px; border: 2px dashed rgba(249, 115, 22, 0.5); animation: spin 15s linear infinite reverse; }
+.ring3 { width: 200px; height: 200px; background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%); border: 1px solid rgba(59, 130, 246, 0.3); box-shadow: 0 0 30px rgba(59, 130, 246, 0.2); animation: pulse 4s ease-in-out infinite; }
+.core { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100px; height: 100px; background: linear-gradient(135deg, #2563eb, #7c3aed); border-radius: 50%; box-shadow: 0 0 60px rgba(37, 99, 235, 0.6); z-index: 5; }
+.floater { position: absolute; width: 15px; height: 15px; background: #f59e0b; border-radius: 50%; box-shadow: 0 0 15px #f59e0b; }
 .f1 { top: 20%; right: 20%; animation: float 6s ease-in-out infinite; }
 .f2 { bottom: 30%; left: 15%; animation: float 8s ease-in-out infinite reverse; background: #ec4899; box-shadow: 0 0 15px #ec4899; }
 
-/* Chat Bubbles */
 .bubble {
   position: absolute;
   padding: 10px 16px;
@@ -200,12 +152,10 @@
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   white-space: nowrap;
 }
-
 .b1 { top: 10%; right: 0; background: white; color: black; border-bottom-left-radius: 0; }
 .b2 { bottom: 20%; left: -20px; background: #2563eb; color: white; border-top-right-radius: 0; }
 .b3 { top: 40%; right: -40px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; border-bottom-right-radius: 0; }
 
-/* Bottom Card Styles */
 .bottomCard {
   background: #101014;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -219,73 +169,47 @@
   overflow: hidden;
   margin-top: 40px;
 }
-
 .quoteBox { flex: 1; }
-.quoteText {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 20px;
-  font-family: serif;
-  letter-spacing: -0.5px;
-}
-
+.quoteText { font-size: 2.5rem; font-weight: 700; color: white; margin-bottom: 20px; font-family: serif; letter-spacing: -0.5px; }
 .userProfile { display: flex; align-items: center; gap: 15px; }
 .avatar { width: 50px; height: 50px; border-radius: 50%; background: #333; overflow: hidden; flex-shrink: 0; }
 .userInfo h4 { color: white; font-weight: 700; font-size: 1rem; margin-bottom: 0; }
 .userInfo p { color: #64748b; font-size: 0.85rem; margin-bottom: 0; }
-
 .logoGrid { flex: 1; display: flex; gap: 20px; justify-content: flex-end; }
-.logoBox {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.05);
-  padding: 15px 30px;
-  border-radius: 12px;
-  color: #64748b;
-  font-weight: 700;
-  font-size: 1.1rem;
-  transition: 0.3s;
-}
+.logoBox { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 15px 30px; border-radius: 12px; color: #64748b; font-weight: 700; font-size: 1.1rem; transition: 0.3s; }
 
-/* Animations */
 @keyframes spin { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
 @keyframes pulse { 0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; } 50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.5; } }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
 
-/* === 📱 MOBILE FIXES (SPECIAL UPDATE) === */
+/* === 📱 MOBILE FIXES (Final) === */
 @media (max-width: 768px) {
   
   .section { 
     padding-top: 100px; 
     height: auto; 
     padding-bottom: 40px; 
-    overflow-x: hidden; /* Bahar niklne se rokega */
+    overflow-x: hidden; 
   }
   
   .mainGrid { 
     grid-template-columns: 1fr; 
     text-align: center; 
-    gap: 50px;
+    gap: 40px;
   }
 
-  .title { 
-    font-size: 2.5rem; 
-  }
-  
-  .description { 
-    font-size: 1rem; 
-    margin: 0 auto 40px; 
-    padding: 0 10px;
-  }
+  .title { font-size: 2.5rem; }
+  .description { font-size: 1rem; margin: 0 auto 40px; padding: 0 10px; }
 
-  /* --- INPUT FIELD FIX (Stacking for Mobile) --- */
+  /* --- INPUT FIX: Stacked (Upar Niche) --- */
   .inputGroup { 
-    flex-direction: column; /* Upar niche karega */
+    flex-direction: column; /* Column bana diya */
     background: transparent;
     border: none;
     padding: 0;
     box-shadow: none;
     gap: 15px;
+    height: auto;
   }
 
   .input {
@@ -295,33 +219,31 @@
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 12px;
     padding: 0 20px;
-    text-align: center;
+    text-align: center; /* Text center */
   }
 
-  .iconBox { display: none; } /* Icon chhupa diya taaki jagah bache */
+  .iconBox { display: none; } /* Icon hata diya */
 
   .submitBtn {
-     width: 100%; /* Full Width Button */
+     width: 100%;
      justify-content: center;
      height: 55px;
      font-size: 1.1rem;
+     margin-top: 5px;
   }
 
-  /* --- REACTOR FIX (Scaling & Positioning) --- */
+  /* --- REACTOR FIX: Small & Centered --- */
   .visualWrapper { 
-    height: 350px; 
+    height: 320px; 
     width: 100%;
-    /* Scale down and prevent overflow */
-    transform: scale(0.65); 
-    margin-left: -10px; /* Thoda left shift taaki center lage */
+    transform: scale(0.55); /* Aur chhota kiya (0.55) */
+    margin-left: -5px;
   }
 
-  /* Chat Bubbles ko andar kheench liya */
-  .b1 { right: 20px; top: 0; }
-  .b2 { left: 20px; bottom: 10px; }
-  .b3 { right: 30px; top: 50%; } /* Jo bahar ja raha tha usse andar kiya */
+  /* Bubbles ko andar kheench liya */
+  .b1 { right: 40px; top: 0; }
+  .b3 { right: 40px; top: 50%; }
 
-  /* Bottom Card Fix */
   .bottomCard { 
     padding: 30px 20px; 
     gap: 30px;
