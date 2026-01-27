@@ -38,6 +38,7 @@ export default function Hero() {
               Smart text automation that feels personal and converts instantly.
             </p>
 
+            {/* Input Bar */}
             <div className={styles.inputGroup}>
               <div className={styles.iconBox}>
                 <Sparkles size={20} />
@@ -52,10 +53,11 @@ export default function Hero() {
           {/* Right: The Living Machine */}
           <motion.div 
             className={styles.visualWrapper}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
+             {/* The Reactor Core (Only Visible on Desktop) */}
              <div className={styles.reactor}>
                 <div className={`${styles.ring} ${styles.ring1}`}></div>
                 <div className={`${styles.ring} ${styles.ring2}`}></div>
@@ -65,20 +67,21 @@ export default function Hero() {
                 <div className={`${styles.floater} ${styles.f2}`}></div>
              </div>
 
-             <motion.div className={`${styles.bubble} ${styles.b1}`} animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}>
+             {/* Bubbles (Mobile par Stack ho jayenge) */}
+             <div className={`${styles.bubble} ${styles.b1}`}>
                "AI Analysis Complete"
-             </motion.div>
-             <motion.div className={`${styles.bubble} ${styles.b2}`} animate={{ y: [0, 15, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}>
+             </div>
+             <div className={`${styles.bubble} ${styles.b2}`}>
                "Sales increased by 40%"
-             </motion.div>
-             <motion.div className={`${styles.bubble} ${styles.b3}`} animate={{ y: [0, -8, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}>
+             </div>
+             <div className={`${styles.bubble} ${styles.b3}`}>
                Traffic Optimized 🚀
-             </motion.div>
+             </div>
           </motion.div>
         </div>
 
 
-        {/* === BOTTOM DARK CARD (Updated Info: Muhammad Asif) === */}
+        {/* === BOTTOM DARK CARD === */}
         <motion.div 
            className={styles.bottomCard}
            initial={{ opacity: 0, y: 50 }}
@@ -90,20 +93,19 @@ export default function Hero() {
               <h3 className={styles.quoteText}>“The Best Investment for Growth”</h3>
               <div className={styles.userProfile}>
                  
-                 {/* Avatar / Picture */}
+                 {/* Avatar */}
                  <div className={styles.avatar}>
                     <img 
                        src="/pic6.jpg" 
                        alt="Muhammad Asif" 
                        style={{width:'100%', height:'100%', objectFit:'cover'}} 
-                       // Agar pic na mile toh ye backup avatar dikhayega
                        onError={(e) => { e.currentTarget.src = "https://ui-avatars.com/api/?name=Muhammad+Asif&background=2563eb&color=fff" }}
                     />
                  </div>
 
                  <div className={styles.userInfo}>
                     <h4>Muhammad Asif</h4>
-                    <p>UI Design Expert</p>
+                    <p>Frontend Dev Expert.</p>
                  </div>
               </div>
            </div>

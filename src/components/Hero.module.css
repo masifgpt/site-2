@@ -1,4 +1,4 @@
-/* File: src/components/Hero.module.css */
+/* --- Hero.module.css (FINAL FIXED VERSION) --- */
 
 .section {
   position: relative;
@@ -8,7 +8,7 @@
   justify-content: center;
   padding: 140px 20px 40px;
   background: radial-gradient(circle at 50% 0%, #1e1e2f 0%, #05050a 100%);
-  overflow-x: hidden; /* Important */
+  overflow: hidden;
 }
 
 .container {
@@ -63,18 +63,17 @@
   margin-bottom: 40px;
 }
 
-/* --- Smart Input Box (Desktop Default) --- */
+/* --- DESKTOP INPUT STYLE --- */
 .inputGroup {
   display: flex;
   align-items: center;
-  background: #13131a; /* Dark solid background */
-  border: 1px solid rgba(255, 255, 255, 0.15); /* Thoda visible border */
-  padding: 5px;
-  border-radius: 50px; /* Fully rounded pill shape */
+  background: #13131a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px;
+  border-radius: 12px;
   max-width: 480px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   width: 100%;
-  position: relative;
 }
 
 .iconBox {
@@ -83,9 +82,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
   color: #60a5fa;
-  margin-left: 5px;
   flex-shrink: 0;
 }
 
@@ -106,7 +105,7 @@
   color: white;
   border: none;
   padding: 12px 24px;
-  border-radius: 40px; /* Match Input Radius */
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
@@ -121,7 +120,7 @@
   box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
 }
 
-/* Visual Engine */
+/* --- VISUAL ENGINE (Desktop) --- */
 .visualWrapper {
   position: relative;
   height: 600px;
@@ -142,11 +141,12 @@
 .f1 { top: 20%; right: 20%; animation: float 6s ease-in-out infinite; }
 .f2 { bottom: 30%; left: 15%; animation: float 8s ease-in-out infinite reverse; background: #ec4899; box-shadow: 0 0 15px #ec4899; }
 
+/* Desktop Bubbles */
 .bubble {
   position: absolute;
-  padding: 10px 16px;
+  padding: 12px 20px;
   border-radius: 16px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 500;
   backdrop-filter: blur(8px);
   z-index: 10;
@@ -184,7 +184,7 @@
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
 
 /* ========================================= */
-/* 📱 SMART MOBILE FIXES (Final)             */
+/* 📱 MOBILE FIXES (PERFECT VERSION)         */
 /* ========================================= */
 @media (max-width: 768px) {
   
@@ -198,66 +198,80 @@
   .mainGrid { 
     grid-template-columns: 1fr; 
     text-align: center; 
-    gap: 50px;
+    gap: 40px;
   }
 
   .title { font-size: 2.5rem; }
-  .description { font-size: 1rem; margin: 0 auto 30px; padding: 0 15px; }
+  .description { font-size: 1rem; margin: 0 auto 30px; padding: 0 5px; }
 
-  /* --- INPUT FIX: Joint Pill Shape --- */
+  /* --- INPUT BAR FIX: Upar Niche (Stacked) --- */
   .inputGroup { 
-    flex-direction: row !important; /* Wapas ek line mein */
-    background: #13131a !important;
-    border: 1px solid rgba(255,255,255,0.2) !important;
-    border-radius: 50px;
-    padding: 4px; /* Tight padding */
-    gap: 0;
-    width: 95%; /* Screen ke andar */
-    margin: 0 auto;
+    flex-direction: column !important; /* Stack Vertically */
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    gap: 15px;
+    padding: 0;
   }
 
   .input {
-    height: 45px;
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    padding: 0 15px;
-    text-align: left;
-    font-size: 0.9rem;
+    width: 100%;
+    height: 55px;
+    background: #13131a; /* Dark Box */
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    padding: 0 20px;
+    text-align: center;
+    color: white;
   }
 
   .iconBox { display: none; } /* Icon hata diya */
 
   .submitBtn {
-     width: auto;
-     height: 45px;
-     padding: 0 20px;
-     font-size: 0.9rem;
+     width: 100%; /* Full Width Button */
+     height: 55px;
+     justify-content: center;
+     font-size: 1.1rem;
      margin: 0;
-     border-radius: 40px;
+     border-radius: 12px;
   }
 
-  /* --- REACTOR FIX: Centered & Smaller --- */
+  /* --- VISUAL FIX: List View (Machine Hidden) --- */
   .visualWrapper { 
-    height: 300px; 
+    height: auto;
     width: 100%;
-    transform: scale(0.6); 
-    transform-origin: center center;
-    /* Machine ko thoda Left Shift kiya taaki right se na kate */
-    margin-left: -15px; 
+    display: flex;
+    flex-direction: column; 
+    gap: 15px;
+    margin-top: 20px;
   }
 
-  /* Chat Bubbles ko aur andar kiya */
-  .b1 { right: 60px !important; top: -10px !important; }
-  .b2 { left: 40px !important; bottom: -10px !important; }
-  .b3 { right: 70px !important; top: 60% !important; }
+  .reactor { display: none; } /* GOL MACHINE HIDDEN */
+
+  .bubble {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important; 
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Bubbles Color Fix for Mobile List */
+  .b1 { background: rgba(255,255,255,0.05); color: white; border-radius: 12px; }
+  .b2 { background: #2563eb; color: white; border-radius: 12px; }
+  .b3 { background: rgba(16, 185, 129, 0.1); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 12px; }
 
   /* Bottom Card Fix */
   .bottomCard { 
     padding: 30px 20px; 
     gap: 30px;
   }
-  .quoteText { font-size: 1.6rem; }
+  .quoteText { font-size: 1.6rem; line-height: 1.3; }
   .logoGrid { display: grid; grid-template-columns: 1fr 1fr; width: 100%; gap: 10px; }
   .logoBox { justify-content: center; padding: 10px; font-size: 0.9rem; }
 }
